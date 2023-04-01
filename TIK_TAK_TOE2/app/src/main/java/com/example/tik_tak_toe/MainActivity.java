@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,8 +30,6 @@ int count=0;
         btn8 = findViewById(R.id.btn8);
         btn9 = findViewById(R.id.btn9);
         btn10 = findViewById(R.id.btn10);
-
-
     }
     public  void check(View view) {
         Button btncurrent = (Button) view;
@@ -94,8 +92,16 @@ int count=0;
                     restart();
 
                 }
+            } else if (count == 9) {
+                restart();
             }
         }
+        btn10.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                restart();
+            }
+        });
     }
     public void restart(){
         btn1.setText("");
